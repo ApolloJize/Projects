@@ -1,0 +1,7 @@
+{
+  "rows": [
+    {"ward": 1, "service_type": "SCREENING", "visits": 16, "event_count": 2},
+    {"ward": 4, "service_type": "IMMUNIZATION", "visits": 9, "event_count": 2},
+    {"ward": 7, "service_type": "OUTREACH", "visits": 23, "event_count": 2}
+  ]
+}
