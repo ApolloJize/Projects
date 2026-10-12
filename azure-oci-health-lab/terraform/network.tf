@@ -126,7 +126,17 @@ resource "oci_core_route_table" "private" {
 resource "oci_core_security_list" "empty" {
   compartment_id = var.oci_compartment_ocid
   vcn_id         = oci_core_vcn.lab.id
-  display_name   = "${var.prefix}-nsg-only"
+  display_name   = "${var.prefix}-bastion-egress"
+  # The Bastion private endpoint has no attached NSG and needs SSH egress.
+  egress_security_rules {
+    protocol         = "6"
+    destination      = local.oci_private
+    destination_type = "CIDR_BLOCK"
+    tcp_options {
+      min = 22
+      max = 22
+    }
+  }
 }
 resource "oci_core_subnet" "private" {
   compartment_id             = var.oci_compartment_ocid

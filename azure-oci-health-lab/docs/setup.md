@@ -45,7 +45,7 @@ The pinned Terraform provider exposes this endpoint as read-only, so the script 
 
 Open the provisioned OCI Bastion, create a **port forwarding** session to the runner's private IP, TCP 22, and provide your SSH public key. Use the SSH command shown on the session page. Connect through its local forwarded port as `ubuntu`.
 
-Clone this repository onto the runner and securely copy only `config.json` there. Run `scripts/install_runner.sh`, create a Python venv, and install `requirements.txt`. Use `OCI_AUTH=instance_principal`; no OCI API private key is needed on the VM. Check that SQL MI and Synapse names resolve to private addresses, Azure VPN connections are connected, and TCP 1433 is reachable before database bootstrap. The operator browser can reach private GoldenGate consoles through an SSH SOCKS tunnel on this runner, using remote DNS in the proxy settings.
+Clone this repository onto the runner and securely copy only `config.json` there. Run `bash scripts/install_runner.sh`, create a Python venv, and install `requirements.txt`. Use `OCI_AUTH=instance_principal`; no OCI API private key is needed on the VM. Check that SQL MI and Synapse names resolve to private addresses, Azure VPN connections are connected, and TCP 1433 is reachable before database bootstrap. The operator browser can reach private GoldenGate consoles through an SSH SOCKS tunnel on this runner, using remote DNS in the proxy settings.
 
 ```sh
 export OCI_AUTH=instance_principal

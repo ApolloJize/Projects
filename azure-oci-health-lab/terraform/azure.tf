@@ -156,11 +156,12 @@ resource "azurerm_synapse_workspace" "warehouse" {
   managed_virtual_network_enabled      = true
   public_network_access_enabled        = false
   identity { type = "SystemAssigned" }
-  aad_admin {
-    login     = var.azure_entra_admin_name
-    object_id = var.azure_entra_admin_object_id
-    tenant_id = var.azure_tenant_id
-  }
+}
+resource "azurerm_synapse_workspace_aad_admin" "admin" {
+  synapse_workspace_id = azurerm_synapse_workspace.warehouse.id
+  login                = var.azure_entra_admin_name
+  object_id            = var.azure_entra_admin_object_id
+  tenant_id            = var.azure_tenant_id
 }
 resource "azurerm_role_assignment" "synapse_lake" {
   scope                = azurerm_storage_account.lake.id
