@@ -1,0 +1,20 @@
+# Replace every placeholder. Copy to terraform.tfvars (gitignored).
+prefix                       = "healthlab"
+azure_subscription_id        = "00000000-0000-0000-0000-000000000000"
+azure_tenant_id              = "00000000-0000-0000-0000-000000000000"
+azure_location               = "eastus"
+azure_entra_admin_object_id   = "00000000-0000-0000-0000-000000000000"
+azure_entra_admin_name        = "healthlab-db-admins"
+operator_cidr                = "203.0.113.10/32" # documentation address; use your IP
+oci_tenancy_ocid              = "ocid1.tenancy.oc1..REPLACE"
+oci_compartment_ocid          = "ocid1.compartment.oc1..REPLACE"
+oci_identity_domain_ocid      = "ocid1.domain.oc1..REPLACE"
+oci_region                   = "us-ashburn-1"
+oci_home_region              = "us-ashburn-1"
+oci_config_profile           = "HEALTHLAB"
+runner_image_ocid             = "ocid1.image.oc1.iad.REPLACE"
+runner_ssh_public_key         = "ssh-ed25519 REPLACE_WITH_PUBLIC_KEY"
+azure_cidr                   = "10.50.0.0/16"
+oci_cidr                     = "10.60.0.0/16"
+enable_gg_connections         = false # set true after scripts/bootstrap_cloud.py
+# sqlmi_ca_pem_path           = "/absolute/path/to/trusted-sqlmi-ca-chain.pem"

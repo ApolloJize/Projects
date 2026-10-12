@@ -1,0 +1,3 @@
+-- Mapping portion for the EHEALTH CDC Extract.
+-- Retain the wizard-generated EXTRACT, SOURCEDB, USERIDALIAS and EXTTRAIL lines.
+TABLE dbo.health_events;

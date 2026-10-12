@@ -1,0 +1,3 @@
+-- Mapping portion for the RHEALTH Nonintegrated Replicat.
+-- Retain the wizard-generated REPLICAT, USERIDALIAS and checkpoint settings.
+MAP dbo.health_events, TARGET RAW_APP.HEALTH_EVENTS;

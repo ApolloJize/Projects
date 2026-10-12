@@ -1,0 +1,9 @@
+azure_tenant_id                = "00000000-0000-0000-0000-000000000000"
+azure_admin_member_object_ids  = ["00000000-0000-0000-0000-000000000000"]
+github_repository             = "ApolloJize/Projects"
+oci_tenancy_ocid               = "ocid1.tenancy.oc1..REPLACE"
+oci_compartment_ocid           = "ocid1.compartment.oc1..REPLACE"
+oci_home_region               = "us-ashburn-1"
+oci_admin_profile             = "DEFAULT"
+oci_operator_email            = "your-email@example.com"
+oci_operator_public_key_path  = "/absolute/path/to/oci_api_key_public.pem"
