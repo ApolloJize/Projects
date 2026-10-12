@@ -173,6 +173,7 @@ resource "azurerm_synapse_sql_pool" "warehouse" {
   synapse_workspace_id = azurerm_synapse_workspace.warehouse.id
   sku_name             = "DW100c"
   create_mode          = "Default"
+  storage_account_type = "LRS"
 }
 resource "azurerm_private_dns_zone" "synapse" {
   name                = "privatelink.sql.azuresynapse.net"

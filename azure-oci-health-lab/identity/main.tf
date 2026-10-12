@@ -73,7 +73,7 @@ resource "oci_identity_api_key" "operator" {
   key_value = file(var.oci_operator_public_key_path)
 }
 resource "oci_identity_policy" "operators" {
-  compartment_id = var.oci_compartment_ocid
+  compartment_id = var.oci_tenancy_ocid
   name           = "healthlab-operators"
   description    = "Cloud services and policies confined to the dedicated lab compartment"
   statements = concat(
