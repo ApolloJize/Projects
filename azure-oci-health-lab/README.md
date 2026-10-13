@@ -1,18 +1,18 @@
 # Azure–OCI health data lab
 
-A small cross-cloud ingestion lab: Azure SQL Managed Instance → GoldenGate → ADW. Synapse holds facility reference data, OIC runs the cleanup procedure, and OCI GenAI summarizes the resulting counts.
+Azure SQL MI feeds ADW through GoldenGate. Synapse holds facility reference data, OIC triggers cleanup, and OCI GenAI summarizes the counts.
 
-Inspired by the public [Tharseo/DC Health architecture](https://docs.oracle.com/en/solutions/tharseo-data-platform-on-oci/index.html). Azure, OIC, and GenAI are additions here. All records are made up; there is no on-premises component.
+Based on the public [Tharseo/DC Health case study](https://docs.oracle.com/en/solutions/tharseo-data-platform-on-oci/index.html), with Azure, OIC, and GenAI added for this lab. Uses made-up records and no on-premises systems.
 
-Try the data flow locally with Python 3.11+:
+Run from this directory with Python 3.11+:
 
 ```sh
 python -m healthlab.demo
 python -m unittest discover -s tests -v
 ```
 
-Expected: 13 source revisions, 6 clean events, 3 rejects, 1 deleted event, 48 visits.
+The sample produces 6 clean events and 48 visits from 13 revisions, with 3 rejects and 1 deleted event.
 
 [Cloud setup](docs/setup.md) · [Accounts and parameters](docs/accounts.md) · [Architecture](docs/architecture.md)
 
-Terraform provisions the cloud resources. GoldenGate process setup and the OIC integration still need the steps in the setup guide. Cloud deployment and end-to-end replication have not been tested against live accounts. The cloud stack is a paid lab.
+Cloud setup costs money and still needs manual GoldenGate and OIC configuration. Deployment and replication have not been tested in live accounts.
